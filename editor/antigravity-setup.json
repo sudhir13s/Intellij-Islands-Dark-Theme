@@ -1,0 +1,25 @@
+{
+  "cli": "/Applications/Antigravity IDE.app/Contents/Resources/app/bin/antigravity-ide",
+  "settingsFile": "~/Library/Application Support/Antigravity IDE/User/settings.json",
+  "uninstallExtensions": [
+    "ms-python.vscode-pylance",
+    "ms-python.vscode-python-envs"
+  ],
+  "installExtensions": [
+    "detachhead.basedpyright"
+  ],
+  "removeSettings": [
+    "editor.tokenColorCustomizations",
+    "editor.semanticTokenColorCustomizations",
+    "python-envs.workspaceSearchPaths",
+    "python-envs.globalSearchPaths"
+  ],
+  "settings": {
+    "workbench.colorTheme": "Intellij Islands Dark Theme",
+    "python.languageServer": "None",
+    "[python]": {
+      "editor.semanticHighlighting.enabled": false
+    },
+    "basedpyright.analysis.typeCheckingMode": "standard"
+  }
+}

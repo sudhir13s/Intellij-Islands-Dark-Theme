@@ -12,6 +12,22 @@ Port of the JetBrains **Islands Dark** color scheme (IntelliJ IDEA, PyCharm, Web
 
 Or from a terminal: `antigravity-ide --install-extension intellij-islands-dark-theme-<version>.vsix` (`code` for VS Code).
 
+### Antigravity — one command
+
+```bash
+python3 setup_antigravity.py
+```
+
+Then run **Developer: Reload Window**. The script reads `editor/antigravity-setup.json` and:
+
+- installs the theme `.vsix` matching `package.json`'s version;
+- **uninstalls Pylance** — it cannot run outside Microsoft's VS Code, and its bundled `PylancePython.tmLanguage` replaces the Python grammar, labelling every annotation class (`ApplyStatus`, `list[AppliedRecord]`) as a built-in;
+- **uninstalls Python Environments** (`ms-python.vscode-python-envs`) — it depends on the native `pet` binary, which the Open VSX ("universal") build of the Python extension does not ship, so it cannot resolve any interpreter and keeps raising "Default interpreter path … could not be resolved". The Python extension itself does not need it (`python.useEnvironmentsExtension` is off by default) and finds interpreters with its JavaScript locator;
+- installs **BasedPyright** for go-to-definition, hovers and type checking;
+- drops stale `editor.tokenColorCustomizations` / `editor.semanticTokenColorCustomizations` (they override any theme) and orphaned `python-envs.*` settings, then sets the theme, `python.languageServer: "None"`, Python semantic highlighting off, and BasedPyright's `standard` checking mode. A backup of `settings.json` goes to the temp folder first.
+
+Override the editor paths with `ANTIGRAVITY_CLI` and `ANTIGRAVITY_SETTINGS` (e.g. for VS Code or another fork). For interpreters outside the project (such as uv environments in `~/.uv/envs`), set `python.venvPath` to that folder and `python.defaultInterpreterPath` to the one to use.
+
 ## Color mapping
 
 Values come from IntelliJ's bundled `themes/islands/IslandSchemeDark.xml` and PyCharm's `colorSchemes/PythonDarcula.xml`.
@@ -42,9 +58,5 @@ Function and method **calls** are default text in every language (only declarati
 ## Notes
 
 - Semantic highlighting (Java language server, TypeScript) is enabled by the theme; it is what colors `console`/`window` as globals and type parameters at their use sites.
-- **Python in Antigravity / other VS Code forks:** Pylance only runs in Microsoft's VS Code, so use the open-source **BasedPyright** extension (`detachhead.basedpyright`) for go-to-definition, set `"python.languageServer": "None"`, and turn semantic highlighting off for Python. BasedPyright's semantic tokens leave called and dotted decorators (`@app.get(...)`) uncolored, while this theme's TextMate rules match PyCharm:
-
-  ```json
-  "[python]": { "editor.semanticHighlighting.enabled": false }
-  ```
+- **Python semantic highlighting is off** (set by `setup_antigravity.py`): BasedPyright's semantic tokens leave called and dotted decorators (`@app.get(...)`) uncolored, while this theme's TextMate rules match PyCharm.
 - The bundled `syntaxes/python-builtins.injection.json` makes subscripted built-ins (`dict[str, Any]`, `frozenset[str]`) read as built-ins and keeps fields named like built-ins (`id: str`) plain, as PyCharm does.
