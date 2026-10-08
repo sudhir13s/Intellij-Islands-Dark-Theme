@@ -1,7 +1,7 @@
 {
-  "name": "intellij-dark-theme",
-  "displayName": "IntelliJ Dark Theme",
-  "description": "IntelliJ IDEA, PyCharm & WebStorm Dark Theme for Antigravity & VS Code",
+  "name": "intellij-islands-dark-theme",
+  "displayName": "Intellij Islands Dark Theme",
+  "description": "IntelliJ & Islands Dark Theme for Antigravity & VS Code",
   "version": "1.0.0",
   "publisher": "sudhir",
   "engines": {
@@ -21,9 +21,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "IntelliJ Dark Theme",
+        "label": "Intellij Islands Dark Theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/intellij-dark-theme.json"
+        "path": "./themes/intellij-islands-dark-theme.json"
       }
     ]
   }
