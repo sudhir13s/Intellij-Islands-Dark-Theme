@@ -14,10 +14,11 @@ def build():
         z.writestr("extension.vsixmanifest", manifest)
         z.write(os.path.join(root, "package.json"), "extension/package.json")
         z.write(os.path.join(root, "README.md"), "extension/README.md")
-        themes_dir = os.path.join(root, "themes")
-        for fn in os.listdir(themes_dir):
-            if fn.endswith(".json"):
-                z.write(os.path.join(themes_dir, fn), f"extension/themes/{fn}")
+        for folder in ("themes", "syntaxes"):
+            folder_path = os.path.join(root, folder)
+            for fn in os.listdir(folder_path):
+                if fn.endswith(".json"):
+                    z.write(os.path.join(folder_path, fn), f"extension/{folder}/{fn}")
     print(f"Built {vsix_path} successfully!")
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
   "name": "intellij-islands-dark-theme",
   "displayName": "Intellij Islands Dark Theme",
   "description": "IntelliJ & Islands Dark Theme for Antigravity & VS Code",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "publisher": "sudhir",
   "engines": {
     "vscode": "^1.75.0"
@@ -24,6 +24,15 @@
         "label": "Intellij Islands Dark Theme",
         "uiTheme": "vs-dark",
         "path": "./themes/intellij-islands-dark-theme.json"
+      }
+    ],
+    "grammars": [
+      {
+        "scopeName": "python-builtins.injection.islands",
+        "path": "./syntaxes/python-builtins.injection.json",
+        "injectTo": [
+          "source.python"
+        ]
       }
     ]
   }
