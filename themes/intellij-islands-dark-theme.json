@@ -645,6 +645,16 @@
       }
     },
     {
+      "name": "Python: built-ins inside decorator arguments",
+      "scope": [
+        "meta.function.decorator.python meta.function-call.arguments.python support.type.python",
+        "meta.function.decorator.python meta.function-call.arguments.python support.function.builtin.python"
+      ],
+      "settings": {
+        "foreground": "#8888c6"
+      }
+    },
+    {
       "name": "Python: dunder names (__init__, __name__)",
       "scope": [
         "support.function.magic.python",

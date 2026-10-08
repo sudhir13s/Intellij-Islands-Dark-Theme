@@ -2,7 +2,7 @@
   "name": "intellij-islands-dark-theme",
   "displayName": "Intellij Islands Dark Theme",
   "description": "IntelliJ & Islands Dark Theme for Antigravity & VS Code",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "publisher": "sudhir",
   "engines": {
     "vscode": "^1.75.0"
