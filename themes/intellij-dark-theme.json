@@ -765,16 +765,54 @@
       }
     },
     {
-      "name": "Built-in / Inbuilt Types",
+      "name": "PyCharm Built-in Types (str, list, dict, int)",
       "scope": [
         "support.type.python",
-        "support.type",
         "support.class.builtin.python",
-        "support.type.primitive",
-        "support.type.builtin"
+        "support.function.builtin.python"
       ],
       "settings": {
         "foreground": "#56a8f5"
+      }
+    },
+    {
+      "name": "PyCharm Self and Cls (Purple/Magenta)",
+      "scope": [
+        "variable.language.special.self.python",
+        "variable.language.special.cls.python"
+      ],
+      "settings": {
+        "foreground": "#c77dbb"
+      }
+    },
+    {
+      "name": "PyCharm Keyword Arguments (Orange)",
+      "scope": [
+        "variable.parameter.function-call.python"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
+      }
+    },
+    {
+      "name": "PyCharm Python Classes and Properties (White/Gray)",
+      "scope": [
+        "entity.name.type.class.python",
+        "entity.other.inherited-class.python",
+        "meta.attribute.python",
+        "variable.other.property.python"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "PyCharm None, True, False (Orange)",
+      "scope": [
+        "constant.language.python"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
       }
     }
   ],
@@ -812,7 +850,7 @@
       "fontStyle": "italic"
     },
     "field": "#c77dbb",
-    "selfParameter": "#cf8e6d",
+    "selfParameter": "#c77dbb",
     "builtinConstant": "#cf8e6d",
     "keyword": "#cf8e6d",
     "modifier": "#cf8e6d",
@@ -820,13 +858,20 @@
     "number": "#2aacb8",
     "string": "#6aab73",
     "regexp": "#6aab73",
-    "clsParameter": "#cf8e6d",
+    "clsParameter": "#c77dbb",
     "type.defaultLibrary:python": "#56a8f5",
     "class.defaultLibrary:python": "#56a8f5",
     "builtinConstant:python": "#cf8e6d",
-    "selfParameter:python": "#cf8e6d",
-    "clsParameter:python": "#cf8e6d",
-    "property:python": "#c77dbb",
-    "field:python": "#c77dbb"
+    "selfParameter:python": "#c77dbb",
+    "clsParameter:python": "#c77dbb",
+    "property:python": "#bcbec4",
+    "field:python": "#bcbec4",
+    "class:python": "#bcbec4",
+    "type:python": "#bcbec4",
+    "enum:python": "#bcbec4",
+    "enumMember:python": "#bcbec4",
+    "variable.readonly:python": "#bcbec4",
+    "parameter.keywordArgument": "#cf8e6d",
+    "parameter.keywordArgument:python": "#cf8e6d"
   }
 }
