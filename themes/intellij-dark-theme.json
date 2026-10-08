@@ -492,15 +492,6 @@
       }
     },
     {
-      "name": "Python Keyword Arguments (Orange)",
-      "scope": [
-        "variable.parameter.function-call.python"
-      ],
-      "settings": {
-        "foreground": "#cc7832"
-      }
-    },
-    {
       "name": "Annotations and Decorators (Yellow)",
       "scope": [
         "storage.type.annotation",
@@ -544,20 +535,30 @@
       "settings": {
         "foreground": "#cc7832"
       }
+    },
+    {
+      "name": "Parameters (Gray - distinct from value)",
+      "scope": [
+        "variable.parameter",
+        "variable.parameter.function-call.python"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
     }
   ],
   "semanticHighlighting": true,
   "semanticTokenColors": {
-    "class": "#bcbec4",
-    "class.defaultLibrary": "#bcbec4",
-    "interface": "#bcbec4",
-    "enum": "#bcbec4",
-    "enumMember": "#9876aa",
-    "struct": "#bcbec4",
-    "type": "#bcbec4",
-    "typeParameter": "#bcbec4",
-    "type.defaultLibrary": "#bcbec4",
-    "constructor": "#4a88c7",
+    "class": "#dfac53",
+    "class.defaultLibrary": "#2aacb8",
+    "interface": "#16baac",
+    "enum": "#dfac53",
+    "enumMember": "#c77dbb",
+    "struct": "#dfac53",
+    "type": "#16baac",
+    "typeParameter": "#16baac",
+    "type.defaultLibrary": "#2aacb8",
+    "constructor": "#56a8f5",
     "constructor.declaration": "#4a88c7",
     "constructor:java": "#4a88c7",
     "constructor.declaration:java": "#4a88c7",
@@ -569,29 +570,29 @@
     "method.static": {
       "fontStyle": "italic"
     },
-    "method": "#bcbec4",
+    "method": "#57aaf7",
     "method.defaultLibrary": "#bcbec4",
     "function.declaration": "#4a88c7",
     "function.declaration.static": {
       "foreground": "#4a88c7",
       "fontStyle": "italic"
     },
-    "function": "#bcbec4",
+    "function": "#56a8f5",
     "function.defaultLibrary": "#bcbec4",
-    "field": "#9876aa",
+    "field": "#c77dbb",
     "field.static": {
       "foreground": "#9876aa",
       "fontStyle": "italic"
     },
-    "property": "#9876aa",
+    "property": "#c77dbb",
     "property.static": {
       "foreground": "#9876aa",
       "fontStyle": "italic"
     },
     "property.readonly": "#9876aa",
     "variable.readonly": "#9876aa",
-    "recordComponent": "#9876aa",
-    "recordComponent:java": "#9876aa",
+    "recordComponent": "#c77dbb",
+    "recordComponent:java": "#c77dbb",
     "variable": "#bcbec4",
     "parameter": "#bcbec4",
     "namespace": "#bcbec4",
@@ -600,27 +601,29 @@
     "type:python": "#bcbec4",
     "property:python": "#bcbec4",
     "field:python": "#bcbec4",
-    "selfParameter": "#9876aa",
-    "selfParameter:python": "#9876aa",
-    "clsParameter": "#9876aa",
-    "clsParameter:python": "#9876aa",
+    "selfParameter": "#c77dbb",
+    "selfParameter:python": "#c77dbb",
+    "clsParameter": "#c77dbb",
+    "clsParameter:python": "#c77dbb",
     "parameter.cls": "#9876aa",
     "parameter.cls:python": "#9876aa",
-    "type.defaultLibrary:python": "#4a88c7",
-    "class.defaultLibrary:python": "#4a88c7",
-    "builtinConstant:python": "#cc7832",
-    "parameter.keywordArgument": "#cc7832",
-    "parameter.keywordArgument:python": "#cc7832",
+    "type.defaultLibrary:python": "#56a8f5",
+    "class.defaultLibrary:python": "#56a8f5",
+    "builtinConstant:python": "#cf8e6d",
+    "parameter.keywordArgument": "#bcbec4",
+    "parameter.keywordArgument:python": "#bcbec4",
     "decorator": "#e0b44c",
     "decorator:python": "#e0b44c",
     "macro": "#e0b44c",
-    "builtinConstant": "#cc7832",
-    "variable.readonly.defaultLibrary": "#cc7832",
+    "builtinConstant": "#cf8e6d",
+    "variable.readonly.defaultLibrary": "#cf8e6d",
     "keyword": "#cc7832",
     "modifier": "#cc7832",
     "operator": "#bcbec4",
     "number": "#289ca8",
     "string": "#5f9e68",
-    "regexp": "#5f9e68"
+    "regexp": "#5f9e68",
+    "parameter:python": "#bcbec4",
+    "variable.readonly.defaultLibrary:python": "#cf8e6d"
   }
 }
