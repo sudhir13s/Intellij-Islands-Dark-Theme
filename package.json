@@ -1,0 +1,30 @@
+{
+  "name": "intellij-dark-theme",
+  "displayName": "IntelliJ Dark Theme",
+  "description": "IntelliJ IDEA, PyCharm & WebStorm Dark Theme for Antigravity & VS Code",
+  "version": "1.0.0",
+  "publisher": "sudhir",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "intellij",
+    "pycharm",
+    "webstorm",
+    "theme",
+    "dark",
+    "jetbrains"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "IntelliJ Dark Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/intellij-dark-theme.json"
+      }
+    ]
+  }
+}
