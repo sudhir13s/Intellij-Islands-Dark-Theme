@@ -1,5 +1,5 @@
 {
-  "name": "IntelliJ Dark Theme",
+  "name": "Islands Dark",
   "type": "dark",
   "colors": {
     "editor.background": "#191a1c",
@@ -291,35 +291,178 @@
   },
   "tokenColors": [
     {
-      "name": "Comments",
+      "name": "Python Built-in Types (str, list, dict, frozenset, int, set, tuple, bool)",
       "scope": [
-        "comment",
-        "comment.line"
+        "support.type.python",
+        "support.class.builtin.python",
+        "support.function.builtin.python",
+        "support.type.builtin"
       ],
       "settings": {
-        "foreground": "#686c73"
+        "foreground": "#4a88c7"
       }
     },
     {
-      "name": "Doc Comments",
+      "name": "Python self and cls (Purple in Parameters & Body)",
       "scope": [
-        "comment.block.documentation",
-        "comment.block"
+        "variable.language.special.self.python",
+        "variable.language.special.cls.python",
+        "variable.parameter.function.language.special.self.python",
+        "variable.parameter.function.language.special.cls.python",
+        "variable.parameter.cls.python",
+        "variable.parameter.self.python"
       ],
       "settings": {
-        "foreground": "#52785e",
+        "foreground": "#9876aa"
+      }
+    },
+    {
+      "name": "Python Parameters and Keyword Arguments (Gray - distinct from value)",
+      "scope": [
+        "variable.parameter",
+        "variable.parameter.function-call.python",
+        "meta.function-call.arguments.python variable.parameter"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Python Classes and Fields (Soft Gray)",
+      "scope": [
+        "entity.name.type.class.python",
+        "entity.other.inherited-class.python",
+        "meta.attribute.python",
+        "variable.other.property.python"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Keywords, Modifiers, Java Primitives",
+      "scope": [
+        "keyword",
+        "keyword.control",
+        "keyword.operator.new",
+        "keyword.operator.expression",
+        "keyword.other",
+        "storage.modifier",
+        "storage.type.primitive.java",
+        "storage.type.java",
+        "storage.type.primitive"
+      ],
+      "settings": {
+        "foreground": "#cc7832"
+      }
+    },
+    {
+      "name": "Boolean and Null Constants (including Python None, True, False)",
+      "scope": [
+        "constant.language.boolean",
+        "constant.language.null",
+        "constant.language.undefined",
+        "constant.language.python",
+        "constant.language"
+      ],
+      "settings": {
+        "foreground": "#cc7832"
+      }
+    },
+    {
+      "name": "Java Classes, Records, Interfaces (Soft Gray)",
+      "scope": [
+        "entity.name.type.class",
+        "entity.name.class",
+        "support.class",
+        "entity.other.inherited-class",
+        "entity.name.type.interface",
+        "entity.name.type",
+        "support.type",
+        "entity.name.type.parameter"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Method and Constructor Definitions (Blue)",
+      "scope": [
+        "entity.name.function",
+        "entity.name.function.member",
+        "entity.name.function.constructor",
+        "meta.function entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#4a88c7"
+      }
+    },
+    {
+      "name": "Static Method Definitions (Blue Italic)",
+      "scope": [
+        "entity.name.function.member.static"
+      ],
+      "settings": {
+        "foreground": "#4a88c7",
         "fontStyle": "italic"
       }
     },
     {
-      "name": "Doc Comment Tags",
+      "name": "Method Calls (Soft Gray)",
       "scope": [
-        "storage.type.class.jsdoc",
-        "entity.name.type.instance.jsdoc",
-        "keyword.other.documentation"
+        "meta.function-call entity.name.function",
+        "meta.method-call entity.name.function",
+        "variable.function"
       ],
       "settings": {
-        "foreground": "#67a37c"
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Java Fields and Record Parameters (Purple)",
+      "scope": [
+        "variable.other.property",
+        "variable.other.object.property",
+        "support.variable.property",
+        "meta.record.constructor variable.parameter",
+        "meta.record.parameters variable.parameter"
+      ],
+      "settings": {
+        "foreground": "#9876aa"
+      }
+    },
+    {
+      "name": "Java Static Fields (Purple Italic)",
+      "scope": [
+        "variable.other.property.static"
+      ],
+      "settings": {
+        "foreground": "#9876aa",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Annotations and Decorators (Yellow)",
+      "scope": [
+        "storage.type.annotation",
+        "punctuation.definition.annotation",
+        "meta.decorator",
+        "punctuation.decorator",
+        "entity.name.function.decorator.python",
+        "meta.function.decorator.python"
+      ],
+      "settings": {
+        "foreground": "#e0b44c"
+      }
+    },
+    {
+      "name": "Package Names (Soft Gray)",
+      "scope": [
+        "meta.package.java entity.name.type",
+        "meta.package.java variable"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
       }
     },
     {
@@ -344,286 +487,132 @@
       }
     },
     {
-      "name": "Boolean and Null Constants",
+      "name": "Comments",
       "scope": [
-        "constant.language.boolean",
-        "constant.language.null",
-        "constant.language.undefined",
-        "constant.language.python",
-        "constant.language"
+        "comment",
+        "comment.line"
       ],
       "settings": {
-        "foreground": "#cc7832"
+        "foreground": "#686c73"
       }
     },
     {
-      "name": "Keywords and Modifiers",
+      "name": "Doc Comments",
       "scope": [
-        "keyword",
-        "keyword.control",
-        "keyword.operator.new",
-        "keyword.operator.expression",
-        "keyword.other",
-        "storage.modifier"
+        "comment.block.documentation",
+        "comment.block"
       ],
       "settings": {
-        "foreground": "#cc7832"
-      }
-    },
-    {
-      "name": "Java Primitives and Storage Types",
-      "scope": [
-        "storage.type.primitive.java",
-        "storage.type.java",
-        "storage.type.primitive",
-        "storage.type"
-      ],
-      "settings": {
-        "foreground": "#cc7832"
-      }
-    },
-    {
-      "name": "Classes, Records, Interfaces, Types (IntelliJ New UI Gray)",
-      "scope": [
-        "entity.name.type.class",
-        "entity.name.class",
-        "support.class",
-        "entity.other.inherited-class",
-        "entity.name.type.interface",
-        "entity.name.type",
-        "support.type",
-        "entity.name.type.parameter"
-      ],
-      "settings": {
-        "foreground": "#bcbec4"
-      }
-    },
-    {
-      "name": "Python Built-in Types (str, list, dict, frozenset, int, set, tuple)",
-      "scope": [
-        "support.type.python",
-        "support.class.builtin.python",
-        "support.function.builtin.python",
-        "support.type.builtin"
-      ],
-      "settings": {
-        "foreground": "#4a88c7"
-      }
-    },
-    {
-      "name": "Method, Constructor, and Function Definitions (Blue)",
-      "scope": [
-        "entity.name.function",
-        "entity.name.function.member",
-        "meta.function entity.name.function",
-        "entity.name.function.constructor",
-        "meta.class.body entity.name.function"
-      ],
-      "settings": {
-        "foreground": "#4a88c7"
-      }
-    },
-    {
-      "name": "Static Method Definitions (Blue Italic)",
-      "scope": [
-        "entity.name.function.member.static"
-      ],
-      "settings": {
-        "foreground": "#4a88c7",
+        "foreground": "#52785e",
         "fontStyle": "italic"
       }
     },
     {
-      "name": "Method Calls (Gray)",
+      "name": "JSON Keys",
       "scope": [
-        "meta.function-call entity.name.function",
-        "meta.method-call entity.name.function",
-        "variable.function"
-      ],
-      "settings": {
-        "foreground": "#bcbec4"
-      }
-    },
-    {
-      "name": "Fields, Member Variables, and Record Parameters (Purple)",
-      "scope": [
-        "variable.other.property",
-        "variable.other.object.property",
-        "support.variable.property",
-        "meta.record.constructor variable.parameter",
-        "meta.record.parameters variable.parameter"
+        "support.type.property-name.json"
       ],
       "settings": {
         "foreground": "#9876aa"
       }
     },
     {
-      "name": "Static Fields (Purple Italic)",
+      "name": "YAML Keys",
       "scope": [
-        "variable.other.property.static"
-      ],
-      "settings": {
-        "foreground": "#9876aa",
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "name": "Python Attributes and Properties (Gray)",
-      "scope": [
-        "meta.attribute.python",
-        "variable.other.property.python"
-      ],
-      "settings": {
-        "foreground": "#bcbec4"
-      }
-    },
-    {
-      "name": "Python self and cls (Purple in Parameters & Body)",
-      "scope": [
-        "variable.language.special.self.python",
-        "variable.language.special.cls.python",
-        "variable.parameter.function.language.special.self.python",
-        "variable.parameter.function.language.special.cls.python",
-        "variable.parameter.cls.python",
-        "variable.parameter.self.python"
-      ],
-      "settings": {
-        "foreground": "#9876aa"
-      }
-    },
-    {
-      "name": "Annotations and Decorators (Yellow)",
-      "scope": [
-        "storage.type.annotation",
-        "punctuation.definition.annotation",
-        "meta.decorator",
-        "punctuation.decorator",
-        "entity.name.function.decorator.python",
-        "meta.function.decorator.python"
-      ],
-      "settings": {
-        "foreground": "#e0b44c"
-      }
-    },
-    {
-      "name": "Variables and Parameters (Gray)",
-      "scope": [
-        "variable",
-        "variable.parameter",
-        "variable.other.readwrite"
-      ],
-      "settings": {
-        "foreground": "#bcbec4"
-      }
-    },
-    {
-      "name": "Package Definition (Keywords Orange, Name Gray)",
-      "scope": [
-        "meta.package.java entity.name.type",
-        "meta.package.java variable"
-      ],
-      "settings": {
-        "foreground": "#bcbec4"
-      }
-    },
-    {
-      "name": "Special Language Variables this, super (Orange)",
-      "scope": [
-        "variable.language.this",
-        "variable.language.super"
+        "entity.name.tag.yaml"
       ],
       "settings": {
         "foreground": "#cc7832"
       }
     },
     {
-      "name": "Parameters (Gray - distinct from value)",
+      "name": "JSX React Components",
       "scope": [
-        "variable.parameter",
-        "variable.parameter.function-call.python"
+        "support.class.component",
+        "support.class.component.js.jsx",
+        "support.class.component.tsx"
       ],
       "settings": {
-        "foreground": "#bcbec4"
+        "foreground": "#2fbaa3"
       }
     }
   ],
   "semanticHighlighting": true,
   "semanticTokenColors": {
-    "class": "#dfac53",
-    "class.defaultLibrary": "#2aacb8",
-    "interface": "#16baac",
-    "enum": "#dfac53",
-    "enumMember": "#c77dbb",
-    "struct": "#dfac53",
-    "type": "#16baac",
-    "typeParameter": "#16baac",
-    "type.defaultLibrary": "#2aacb8",
-    "constructor": "#56a8f5",
-    "constructor.declaration": "#4a88c7",
+    "class": "#bcbec4",
+    "class:java": "#bcbec4",
+    "class:python": "#bcbec4",
+    "interface": "#bcbec4",
+    "interface:java": "#bcbec4",
+    "enum": "#bcbec4",
+    "enum:java": "#bcbec4",
+    "type": "#bcbec4",
+    "struct": "#bcbec4",
+    "typeParameter": "#bcbec4",
+    "constructor": "#4a88c7",
     "constructor:java": "#4a88c7",
+    "constructor.declaration": "#4a88c7",
     "constructor.declaration:java": "#4a88c7",
     "method.declaration": "#4a88c7",
+    "method.declaration:java": "#4a88c7",
+    "method.declaration:python": "#4a88c7",
     "method.declaration.static": {
       "foreground": "#4a88c7",
       "fontStyle": "italic"
     },
-    "method.static": {
-      "fontStyle": "italic"
-    },
-    "method": "#57aaf7",
-    "method.defaultLibrary": "#bcbec4",
-    "function.declaration": "#4a88c7",
-    "function.declaration.static": {
+    "method.declaration.static:java": {
       "foreground": "#4a88c7",
       "fontStyle": "italic"
     },
-    "function": "#56a8f5",
-    "function.defaultLibrary": "#bcbec4",
-    "field": "#c77dbb",
+    "method": "#bcbec4",
+    "method:java": "#bcbec4",
+    "function": "#bcbec4",
+    "function.declaration": "#4a88c7",
+    "field": "#9876aa",
+    "field:java": "#9876aa",
+    "field:python": "#bcbec4",
     "field.static": {
       "foreground": "#9876aa",
       "fontStyle": "italic"
     },
-    "property": "#c77dbb",
+    "field.static:java": {
+      "foreground": "#9876aa",
+      "fontStyle": "italic"
+    },
+    "property": "#9876aa",
+    "property:java": "#9876aa",
+    "property:python": "#bcbec4",
     "property.static": {
       "foreground": "#9876aa",
       "fontStyle": "italic"
     },
-    "property.readonly": "#9876aa",
-    "variable.readonly": "#9876aa",
-    "recordComponent": "#c77dbb",
-    "recordComponent:java": "#c77dbb",
-    "variable": "#bcbec4",
-    "parameter": "#bcbec4",
-    "namespace": "#bcbec4",
-    "namespace:java": "#bcbec4",
-    "class:python": "#bcbec4",
-    "type:python": "#bcbec4",
-    "property:python": "#bcbec4",
-    "field:python": "#bcbec4",
-    "selfParameter": "#c77dbb",
-    "selfParameter:python": "#c77dbb",
-    "clsParameter": "#c77dbb",
-    "clsParameter:python": "#c77dbb",
+    "recordComponent": "#9876aa",
+    "recordComponent:java": "#9876aa",
+    "enumMember": "#9876aa",
+    "selfParameter": "#9876aa",
+    "selfParameter:python": "#9876aa",
+    "clsParameter": "#9876aa",
+    "clsParameter:python": "#9876aa",
     "parameter.cls": "#9876aa",
     "parameter.cls:python": "#9876aa",
-    "type.defaultLibrary:python": "#56a8f5",
-    "class.defaultLibrary:python": "#56a8f5",
-    "builtinConstant:python": "#cf8e6d",
+    "parameter": "#bcbec4",
+    "parameter:python": "#bcbec4",
+    "parameter:java": "#bcbec4",
     "parameter.keywordArgument": "#bcbec4",
     "parameter.keywordArgument:python": "#bcbec4",
+    "variable": "#bcbec4",
+    "class.defaultLibrary:python": "#4a88c7",
+    "type.defaultLibrary:python": "#4a88c7",
     "decorator": "#e0b44c",
     "decorator:python": "#e0b44c",
-    "macro": "#e0b44c",
-    "builtinConstant": "#cf8e6d",
-    "variable.readonly.defaultLibrary": "#cf8e6d",
+    "decorator:java": "#e0b44c",
     "keyword": "#cc7832",
     "modifier": "#cc7832",
-    "operator": "#bcbec4",
+    "builtinConstant": "#cc7832",
+    "builtinConstant:python": "#cc7832",
+    "variable.readonly.defaultLibrary": "#cc7832",
+    "variable.readonly.defaultLibrary:python": "#cc7832",
     "number": "#289ca8",
-    "string": "#5f9e68",
-    "regexp": "#5f9e68",
-    "parameter:python": "#bcbec4",
-    "variable.readonly.defaultLibrary:python": "#cf8e6d"
+    "string": "#5f9e68"
   }
 }
