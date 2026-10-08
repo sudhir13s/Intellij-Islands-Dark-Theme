@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Set up Antigravity (or another VS Code fork) for this theme in one command.
+"""Configure Antigravity (or another VS Code fork) for Python and the Islands Dark theme.
 
-Installs the theme package, removes extensions whose grammars fight the theme (Pylance),
-installs BasedPyright for Python code intelligence, and merges the editor settings the
-theme relies on. Everything it applies lives in editor/antigravity-setup.json; the CLI and
-settings paths can be overridden with ANTIGRAVITY_CLI and ANTIGRAVITY_SETTINGS.
+Removes extensions that cannot work outside Microsoft's VS Code and break coloring or
+interpreter discovery, installs their open-source replacements, and merges the editor
+settings in setup.json. It does not install the theme itself — that is the plugin's job
+(see the repository README). CLI and settings paths can be overridden with
+ANTIGRAVITY_CLI and ANTIGRAVITY_SETTINGS.
 """
 import json
 import os
@@ -14,10 +15,10 @@ import sys
 import tempfile
 import time
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-CONFIG_PATH = os.path.join(ROOT, "editor", "antigravity-setup.json")
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "setup.json")
 CLI_ENV = "ANTIGRAVITY_CLI"
 SETTINGS_ENV = "ANTIGRAVITY_SETTINGS"
+CLI_TIMEOUT_SECONDS = 300
 
 
 class SetupError(Exception):
@@ -33,19 +34,10 @@ def load_config():
 
 
 def run_cli(cli, *arguments):
-    result = subprocess.run([cli, *arguments], capture_output=True, text=True, timeout=300)
+    result = subprocess.run([cli, *arguments], capture_output=True, text=True, timeout=CLI_TIMEOUT_SECONDS)
     if result.returncode != 0:
         raise SetupError(f"{os.path.basename(cli)} {' '.join(arguments)} failed: {result.stderr.strip()}")
     return result.stdout
-
-
-def theme_package_path():
-    with open(os.path.join(ROOT, "package.json"), encoding="utf-8") as manifest_file:
-        manifest = json.load(manifest_file)
-    package_path = os.path.join(ROOT, f"{manifest['name']}-{manifest['version']}.vsix")
-    if not os.path.exists(package_path):
-        raise SetupError(f"{os.path.basename(package_path)} not found; run build_vsix.py first")
-    return package_path
 
 
 def sync_extensions(config):
@@ -61,23 +53,25 @@ def sync_extensions(config):
         if extension_id.lower() not in installed:
             run_cli(cli, "--install-extension", extension_id)
             print(f"installed {extension_id}")
-    package_path = theme_package_path()
-    run_cli(cli, "--install-extension", package_path, "--force")
-    print(f"installed {os.path.basename(package_path)}")
+
+
+def read_settings(settings_path):
+    if not os.path.exists(settings_path):
+        return {}
+    try:
+        with open(settings_path, encoding="utf-8") as settings_file:
+            settings = json.load(settings_file)
+    except json.JSONDecodeError as error:
+        raise SetupError(f"{settings_path} is not plain JSON (comments?): {error}") from error
+    backup_path = os.path.join(tempfile.gettempdir(), f"antigravity-settings-{int(time.time())}.json")
+    shutil.copyfile(settings_path, backup_path)
+    print(f"backup    {backup_path}")
+    return settings
 
 
 def merge_settings(config):
     settings_path = config["settingsFile"]
-    settings = {}
-    if os.path.exists(settings_path):
-        try:
-            with open(settings_path, encoding="utf-8") as settings_file:
-                settings = json.load(settings_file)
-        except json.JSONDecodeError as error:
-            raise SetupError(f"{settings_path} is not plain JSON (comments?): {error}") from error
-        backup_path = os.path.join(tempfile.gettempdir(), f"antigravity-settings-{int(time.time())}.json")
-        shutil.copyfile(settings_path, backup_path)
-        print(f"backup    {backup_path}")
+    settings = read_settings(settings_path)
     for key in config["removeSettings"]:
         if settings.pop(key, None) is not None:
             print(f"dropped   {key}")
