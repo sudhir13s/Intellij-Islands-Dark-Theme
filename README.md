@@ -21,7 +21,7 @@ Values come from IntelliJ's bundled `themes/islands/IslandSchemeDark.xml` and Py
 | Default text, operators, punctuation, calls, locals, parameters, type names | `#BCBEC4` | `=`, `&&`, `=>`, `findAll()`, `String`, `Props` |
 | Keywords, modifiers, primitives, `true`/`false`/`None`, `this` | `#CF8E6D` | `public`, `def`, `const`, `int`, `string` (TS) |
 | Function / method / constructor declarations | `#56A8F5` | `def list_users`, `function UserCard` |
-| Fields, properties, JSON keys | `#C77DBB` | `this.userName`, `obj.env`, `"name":` |
+| Fields, properties, Java record components, JSON keys | `#C77DBB` | `this.userName`, `record Point(int x)`, `obj.env`, `"name":` |
 | Static fields, constants, enum members, JS globals | `#C77DBB` italic | `MAX_USERS`, `Color.RED`, `window` |
 | Annotations and decorators | `#B3AE60` | `@RestController`, `@app.get` |
 | Strings | `#6AAB73` | `"bob"` |
