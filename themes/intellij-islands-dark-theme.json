@@ -291,47 +291,309 @@
   },
   "tokenColors": [
     {
-      "name": "Python Built-in Types (str, list, dict, frozenset, int, set, tuple, bool)",
+      "name": "Default text, operators, punctuation",
       "scope": [
-        "support.type.python",
-        "support.class.builtin.python",
-        "support.function.builtin.python",
-        "support.type.builtin"
-      ],
-      "settings": {
-        "foreground": "#4a88c7"
-      }
-    },
-    {
-      "name": "Python self and cls (Purple in Parameters & Body)",
-      "scope": [
-        "variable.language.special.self.python",
-        "variable.language.special.cls.python",
-        "variable.parameter.function.language.special.self.python",
-        "variable.parameter.function.language.special.cls.python",
-        "variable.parameter.cls.python",
-        "variable.parameter.self.python"
-      ],
-      "settings": {
-        "foreground": "#9876aa"
-      }
-    },
-    {
-      "name": "Python Parameters and Keyword Arguments (Gray - distinct from value)",
-      "scope": [
-        "variable.parameter",
-        "variable.parameter.function-call.python",
-        "meta.function-call.arguments.python variable.parameter"
+        "keyword.operator",
+        "punctuation",
+        "meta.brace",
+        "storage.type.function.arrow",
+        "meta.template.expression"
       ],
       "settings": {
         "foreground": "#bcbec4"
       }
     },
     {
-      "name": "Python Classes and Fields (Soft Gray)",
+      "name": "Comments",
       "scope": [
-        "entity.name.type.class.python",
-        "entity.other.inherited-class.python",
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "foreground": "#7a7e85"
+      }
+    },
+    {
+      "name": "Doc comments, Python docstrings",
+      "scope": [
+        "comment.block.documentation",
+        "comment.block.javadoc",
+        "string.quoted.docstring",
+        "string.quoted.docstring punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#5f826b",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Doc comment tags (@param, @return)",
+      "scope": [
+        "comment.block.documentation storage.type",
+        "comment.block.documentation keyword",
+        "comment.block.javadoc keyword",
+        "keyword.other.documentation",
+        "storage.type.class.jsdoc"
+      ],
+      "settings": {
+        "foreground": "#67a37c",
+        "fontStyle": ""
+      }
+    },
+    {
+      "name": "Doc comment tag values",
+      "scope": [
+        "comment.block.documentation variable",
+        "comment.block.documentation entity.name.type",
+        "comment.block.javadoc variable.parameter",
+        "variable.other.jsdoc",
+        "entity.name.type.instance.jsdoc"
+      ],
+      "settings": {
+        "foreground": "#abadb3",
+        "fontStyle": ""
+      }
+    },
+    {
+      "name": "TODO markers",
+      "scope": [
+        "keyword.codetag.notation",
+        "comment keyword.todo"
+      ],
+      "settings": {
+        "foreground": "#8bb33d",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Keywords, modifiers, storage, language constants",
+      "scope": [
+        "keyword",
+        "storage",
+        "storage.type",
+        "storage.modifier",
+        "constant.language",
+        "variable.language.this",
+        "variable.language.super",
+        "keyword.operator.new",
+        "keyword.operator.expression",
+        "keyword.operator.instanceof",
+        "keyword.operator.logical.python",
+        "keyword.operator.wordlike",
+        "support.type.primitive",
+        "support.type.builtin.ts",
+        "support.type.builtin.tsx"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
+      }
+    },
+    {
+      "name": "Java type references (String, List<T>) and import paths are not keywords",
+      "scope": [
+        "storage.type.java",
+        "storage.type.generic.java",
+        "storage.type.object.array.java",
+        "storage.modifier.import.java",
+        "storage.modifier.package.java"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Java primitives are keywords",
+      "scope": [
+        "storage.type.primitive.java",
+        "storage.type.primitive.array.java"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
+      }
+    },
+    {
+      "name": "Strings",
+      "scope": [
+        "string",
+        "string.template",
+        "storage.type.string.python",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#6aab73"
+      }
+    },
+    {
+      "name": "String escapes and format placeholders",
+      "scope": [
+        "constant.character.escape",
+        "constant.character.format.placeholder",
+        "storage.type.format.python",
+        "punctuation.definition.template-expression"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
+      }
+    },
+    {
+      "name": "JS/TS regex literals (/.../)",
+      "scope": [
+        "string.regexp",
+        "string.regexp punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "#42c3d4"
+      }
+    },
+    {
+      "name": "Python raw/regex strings read as strings",
+      "scope": [
+        "string.regexp.quoted",
+        "string.regexp.quoted punctuation.definition.string",
+        "string.regexp.quoted keyword",
+        "string.regexp.quoted keyword.operator",
+        "string.regexp.quoted constant.other",
+        "string.regexp.quoted constant.character.set",
+        "string.regexp.quoted support.other.match",
+        "string.regexp.quoted punctuation",
+        "string.regexp.quoted entity.name.tag"
+      ],
+      "settings": {
+        "foreground": "#6aab73"
+      }
+    },
+    {
+      "name": "Python regex escapes (\\d, \\.)",
+      "scope": [
+        "string.regexp.quoted support.other.escape",
+        "string.regexp.quoted constant.character.escape"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
+      }
+    },
+    {
+      "name": "Numbers",
+      "scope": [
+        "constant.numeric",
+        "keyword.other.unit",
+        "storage.type.number.python",
+        "storage.type.imaginary.number.python"
+      ],
+      "settings": {
+        "foreground": "#2aacb8"
+      }
+    },
+    {
+      "name": "Types, classes, interfaces, enums (references and declarations)",
+      "scope": [
+        "entity.name.type",
+        "entity.name.class",
+        "support.class",
+        "entity.other.inherited-class",
+        "entity.name.namespace",
+        "meta.package",
+        "meta.import"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Type parameters",
+      "scope": [
+        "entity.name.type.parameter"
+      ],
+      "settings": {
+        "foreground": "#16baac"
+      }
+    },
+    {
+      "name": "Function, method, constructor declarations",
+      "scope": [
+        "entity.name.function"
+      ],
+      "settings": {
+        "foreground": "#56a8f5"
+      }
+    },
+    {
+      "name": "Function and method calls",
+      "scope": [
+        "meta.function-call entity.name.function",
+        "meta.method-call entity.name.function",
+        "meta.function-call.generic",
+        "variable.function",
+        "support.function"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Parameters and local variables",
+      "scope": [
+        "variable",
+        "variable.parameter"
+      ],
+      "settings": {
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Fields, properties, object keys",
+      "scope": [
+        "variable.other.property",
+        "variable.other.object.property",
+        "support.variable.property",
+        "meta.object-literal.key",
+        "meta.record.parameters variable.parameter"
+      ],
+      "settings": {
+        "foreground": "#c77dbb"
+      }
+    },
+    {
+      "name": "Static fields, constants, enum members",
+      "scope": [
+        "variable.other.property.static",
+        "variable.other.enummember",
+        "constant.other.enum"
+      ],
+      "settings": {
+        "foreground": "#c77dbb",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "JS/TS globals (window, document, console, process)",
+      "scope": [
+        "support.variable.dom",
+        "support.variable.object",
+        "support.class.console"
+      ],
+      "settings": {
+        "foreground": "#c77dbb",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Annotations and decorators",
+      "scope": [
+        "storage.type.annotation",
+        "punctuation.definition.annotation",
+        "punctuation.decorator",
+        "punctuation.definition.decorator",
+        "entity.name.function.decorator",
+        "meta.decorator variable.other.readonly"
+      ],
+      "settings": {
+        "foreground": "#b3ae60"
+      }
+    },
+    {
+      "name": "Python: no field coloring for attributes",
+      "scope": [
         "meta.attribute.python",
         "variable.other.property.python"
       ],
@@ -340,279 +602,282 @@
       }
     },
     {
-      "name": "Keywords, Modifiers, Java Primitives",
+      "name": "Python: self and cls",
       "scope": [
-        "keyword",
-        "keyword.control",
-        "keyword.operator.new",
-        "keyword.operator.expression",
-        "keyword.other",
-        "storage.modifier",
-        "storage.type.primitive.java",
-        "storage.type.java",
-        "storage.type.primitive"
+        "variable.language.special.self.python",
+        "variable.language.special.cls.python",
+        "variable.parameter.function.language.special.self.python",
+        "variable.parameter.function.language.special.cls.python"
       ],
       "settings": {
-        "foreground": "#cc7832"
+        "foreground": "#94558d"
       }
     },
     {
-      "name": "Boolean and Null Constants (including Python None, True, False)",
+      "name": "Python: keyword arguments in calls",
       "scope": [
-        "constant.language.boolean",
-        "constant.language.null",
-        "constant.language.undefined",
-        "constant.language.python",
-        "constant.language"
+        "variable.parameter.function-call.python"
       ],
       "settings": {
-        "foreground": "#cc7832"
+        "foreground": "#aa4926"
       }
     },
     {
-      "name": "Java Classes, Records, Interfaces (Soft Gray)",
+      "name": "Python: built-in names (print, len, str, int, ValueError)",
       "scope": [
-        "entity.name.type.class",
-        "entity.name.class",
-        "support.class",
-        "entity.other.inherited-class",
-        "entity.name.type.interface",
-        "entity.name.type",
-        "support.type",
-        "entity.name.type.parameter"
+        "support.function.builtin.python",
+        "support.type.python",
+        "support.type.exception.python"
       ],
       "settings": {
-        "foreground": "#bcbec4"
+        "foreground": "#8888c6"
       }
     },
     {
-      "name": "Method and Constructor Definitions (Blue)",
+      "name": "Python: built-ins used as decorators (@classmethod, @property, @staticmethod)",
       "scope": [
-        "entity.name.function",
-        "entity.name.function.member",
-        "entity.name.function.constructor",
-        "meta.function entity.name.function"
+        "meta.function.decorator.python support.type.python",
+        "meta.function.decorator.python support.function.builtin.python",
+        "entity.name.function.decorator punctuation.separator.period"
       ],
       "settings": {
-        "foreground": "#4a88c7"
+        "foreground": "#b3ae60"
       }
     },
     {
-      "name": "Static Method Definitions (Blue Italic)",
+      "name": "Python: dunder names (__init__, __name__)",
       "scope": [
-        "entity.name.function.member.static"
+        "support.function.magic.python",
+        "support.variable.magic.python"
       ],
       "settings": {
-        "foreground": "#4a88c7",
-        "fontStyle": "italic"
+        "foreground": "#b200b2"
       }
     },
     {
-      "name": "Method Calls (Soft Gray)",
+      "name": "HTML/XML/JSX tags",
       "scope": [
-        "meta.function-call entity.name.function",
-        "meta.method-call entity.name.function",
-        "variable.function"
+        "entity.name.tag",
+        "punctuation.definition.tag"
       ],
       "settings": {
-        "foreground": "#bcbec4"
+        "foreground": "#d5b778"
       }
     },
     {
-      "name": "Java Fields and Record Parameters (Purple)",
+      "name": "JSX/TSX components and custom tags",
       "scope": [
-        "variable.other.property",
-        "variable.other.object.property",
-        "support.variable.property",
-        "meta.record.constructor variable.parameter",
-        "meta.record.parameters variable.parameter"
+        "support.class.component",
+        "entity.name.tag.custom"
       ],
       "settings": {
-        "foreground": "#9876aa"
+        "foreground": "#2fbaa3"
       }
     },
     {
-      "name": "Java Static Fields (Purple Italic)",
+      "name": "Tag attributes",
       "scope": [
-        "variable.other.property.static"
+        "entity.other.attribute-name"
       ],
       "settings": {
-        "foreground": "#9876aa",
-        "fontStyle": "italic"
+        "foreground": "#bababa"
       }
     },
     {
-      "name": "Annotations and Decorators (Yellow)",
+      "name": "CSS property names",
       "scope": [
-        "storage.type.annotation",
-        "punctuation.definition.annotation",
-        "meta.decorator",
-        "punctuation.decorator",
-        "entity.name.function.decorator.python",
-        "meta.function.decorator.python"
+        "support.type.property-name.css",
+        "support.type.property-name.scss"
       ],
       "settings": {
-        "foreground": "#e0b44c"
+        "foreground": "#c77dbb"
       }
     },
     {
-      "name": "Package Names (Soft Gray)",
+      "name": "JSON keys",
       "scope": [
-        "meta.package.java entity.name.type",
-        "meta.package.java variable"
+        "support.type.property-name.json",
+        "punctuation.support.type.property-name.json"
       ],
       "settings": {
-        "foreground": "#bcbec4"
+        "foreground": "#c77dbb"
       }
     },
     {
-      "name": "Strings",
-      "scope": [
-        "string",
-        "string.quoted",
-        "string.template"
-      ],
-      "settings": {
-        "foreground": "#5f9e68"
-      }
-    },
-    {
-      "name": "Numbers",
-      "scope": [
-        "constant.numeric",
-        "constant.language.numeric"
-      ],
-      "settings": {
-        "foreground": "#289ca8"
-      }
-    },
-    {
-      "name": "Comments",
-      "scope": [
-        "comment",
-        "comment.line"
-      ],
-      "settings": {
-        "foreground": "#686c73"
-      }
-    },
-    {
-      "name": "Doc Comments",
-      "scope": [
-        "comment.block.documentation",
-        "comment.block"
-      ],
-      "settings": {
-        "foreground": "#52785e",
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "name": "JSON Keys",
-      "scope": [
-        "support.type.property-name.json"
-      ],
-      "settings": {
-        "foreground": "#9876aa"
-      }
-    },
-    {
-      "name": "YAML Keys",
+      "name": "YAML keys",
       "scope": [
         "entity.name.tag.yaml"
       ],
       "settings": {
-        "foreground": "#cc7832"
+        "foreground": "#cf8e6d"
       }
     },
     {
-      "name": "JSX React Components",
+      "name": "YAML plain values",
       "scope": [
-        "support.class.component",
-        "support.class.component.js.jsx",
-        "support.class.component.tsx"
+        "string.unquoted.plain.out.yaml"
       ],
       "settings": {
-        "foreground": "#2fbaa3"
+        "foreground": "#bcbec4"
+      }
+    },
+    {
+      "name": "Properties / INI keys (Spring application.properties)",
+      "scope": [
+        "keyword.other.definition.ini",
+        "source.java-properties support.type.property-name"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d"
+      }
+    },
+    {
+      "name": "Markdown headings",
+      "scope": [
+        "markup.heading",
+        "entity.name.section.markdown",
+        "punctuation.definition.heading.markdown"
+      ],
+      "settings": {
+        "foreground": "#cf8e6d",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Markdown bold",
+      "scope": [
+        "markup.bold"
+      ],
+      "settings": {
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Markdown italic",
+      "scope": [
+        "markup.italic"
+      ],
+      "settings": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Markdown links",
+      "scope": [
+        "markup.underline.link",
+        "string.other.link"
+      ],
+      "settings": {
+        "foreground": "#56a8f5"
+      }
+    },
+    {
+      "name": "Markdown inline code",
+      "scope": [
+        "markup.inline.raw"
+      ],
+      "settings": {
+        "foreground": "#6aab73"
+      }
+    },
+    {
+      "name": "Diff inserted",
+      "scope": [
+        "markup.inserted"
+      ],
+      "settings": {
+        "foreground": "#6aab73"
+      }
+    },
+    {
+      "name": "Diff deleted",
+      "scope": [
+        "markup.deleted"
+      ],
+      "settings": {
+        "foreground": "#f75464"
+      }
+    },
+    {
+      "name": "Invalid",
+      "scope": [
+        "invalid",
+        "invalid.illegal"
+      ],
+      "settings": {
+        "foreground": "#f75464"
+      }
+    },
+    {
+      "name": "Deprecated",
+      "scope": [
+        "invalid.deprecated"
+      ],
+      "settings": {
+        "fontStyle": "strikethrough"
       }
     }
   ],
   "semanticHighlighting": true,
   "semanticTokenColors": {
     "class": "#bcbec4",
-    "class:java": "#bcbec4",
-    "class:python": "#bcbec4",
     "interface": "#bcbec4",
-    "interface:java": "#bcbec4",
     "enum": "#bcbec4",
-    "enum:java": "#bcbec4",
-    "type": "#bcbec4",
     "struct": "#bcbec4",
-    "typeParameter": "#bcbec4",
-    "constructor": "#4a88c7",
-    "constructor:java": "#4a88c7",
-    "constructor.declaration": "#4a88c7",
-    "constructor.declaration:java": "#4a88c7",
-    "method.declaration": "#4a88c7",
-    "method.declaration:java": "#4a88c7",
-    "method.declaration:python": "#4a88c7",
-    "method.declaration.static": {
-      "foreground": "#4a88c7",
-      "fontStyle": "italic"
-    },
-    "method.declaration.static:java": {
-      "foreground": "#4a88c7",
-      "fontStyle": "italic"
-    },
-    "method": "#bcbec4",
-    "method:java": "#bcbec4",
+    "type": "#bcbec4",
+    "namespace": "#bcbec4",
+    "typeParameter": "#16baac",
     "function": "#bcbec4",
-    "function.declaration": "#4a88c7",
-    "field": "#9876aa",
-    "field:java": "#9876aa",
-    "field:python": "#bcbec4",
-    "field.static": {
-      "foreground": "#9876aa",
+    "function.declaration": "#56a8f5",
+    "method": "#bcbec4",
+    "method.declaration": "#56a8f5",
+    "method.static": {
+      "foreground": "#bcbec4",
       "fontStyle": "italic"
     },
-    "field.static:java": {
-      "foreground": "#9876aa",
+    "method.declaration.static": {
+      "foreground": "#56a8f5",
       "fontStyle": "italic"
     },
-    "property": "#9876aa",
-    "property:java": "#9876aa",
-    "property:python": "#bcbec4",
-    "property.static": {
-      "foreground": "#9876aa",
-      "fontStyle": "italic"
-    },
-    "recordComponent": "#9876aa",
-    "recordComponent:java": "#9876aa",
-    "enumMember": "#9876aa",
-    "selfParameter": "#9876aa",
-    "selfParameter:python": "#9876aa",
-    "clsParameter": "#9876aa",
-    "clsParameter:python": "#9876aa",
-    "parameter.cls": "#9876aa",
-    "parameter.cls:python": "#9876aa",
     "parameter": "#bcbec4",
-    "parameter:python": "#bcbec4",
-    "parameter:java": "#bcbec4",
-    "parameter.keywordArgument": "#bcbec4",
-    "parameter.keywordArgument:python": "#bcbec4",
     "variable": "#bcbec4",
-    "class.defaultLibrary:python": "#4a88c7",
-    "type.defaultLibrary:python": "#4a88c7",
-    "decorator": "#e0b44c",
-    "decorator:python": "#e0b44c",
-    "decorator:java": "#e0b44c",
-    "keyword": "#cc7832",
-    "modifier": "#cc7832",
-    "builtinConstant": "#cc7832",
-    "builtinConstant:python": "#cc7832",
-    "variable.readonly.defaultLibrary": "#cc7832",
-    "variable.readonly.defaultLibrary:python": "#cc7832",
-    "number": "#289ca8",
-    "string": "#5f9e68"
+    "variable.defaultLibrary": {
+      "foreground": "#c77dbb",
+      "fontStyle": "italic"
+    },
+    "property": "#c77dbb",
+    "property.static": {
+      "foreground": "#c77dbb",
+      "fontStyle": "italic"
+    },
+    "enumMember": {
+      "foreground": "#c77dbb",
+      "fontStyle": "italic"
+    },
+    "annotation": "#b3ae60",
+    "annotationMember": "#bcbec4",
+    "decorator": "#b3ae60",
+    "keyword": "#cf8e6d",
+    "modifier": "#cf8e6d",
+    "number": "#2aacb8",
+    "string": "#6aab73",
+    "property:python": "#bcbec4",
+    "variable.defaultLibrary:python": "#bcbec4",
+    "selfParameter": "#94558d",
+    "clsParameter": "#94558d",
+    "class.builtin:python": "#8888c6",
+    "function.builtin:python": "#8888c6",
+    "class.defaultLibrary:python": "#8888c6",
+    "function.defaultLibrary:python": "#8888c6",
+    "*.decorator:python": "#b3ae60",
+    "class.decorator:python": "#b3ae60",
+    "function.decorator:python": "#b3ae60",
+    "method.decorator:python": "#b3ae60",
+    "variable.decorator:python": "#b3ae60",
+    "class.decorator.builtin:python": "#b3ae60",
+    "function.decorator.builtin:python": "#b3ae60",
+    "parameter.keywordArgument:python": "#aa4926",
+    "magicFunction:python": "#b200b2",
+    "builtinConstant:python": "#cf8e6d"
   }
 }

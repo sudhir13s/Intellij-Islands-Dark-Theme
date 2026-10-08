@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "python-builtins.injection.islands",
+  "injectionSelector": "L:source.python -string -comment",
+  "patterns": [
+    {
+      "comment": "A field that shadows a built-in name (`id: str`, `type: Kind`) is a declaration, not the built-in; PyCharm leaves it plain.",
+      "match": "^\\s*\\b(id|type|hash|input|format|filter|map|max|min|next|open|range|round|sum|vars|zip|dir|all|any|bin|chr|ord|oct|hex|len|iter|repr|sorted|slice|object|property|compile|help|abs|pow|callable|print|ascii|enumerate|reversed|bytes|str|int|float|bool|list|dict|set|tuple|frozenset|complex)\\b(?=\\s*:(?!=))",
+      "captures": {
+        "1": { "name": "variable.other.field.python" }
+      }
+    },
+    {
+      "comment": "Subscripted built-in generics (`dict[str, Any]`, `frozenset[str]`); the stock grammar reads these as item access and drops the built-in scope.",
+      "match": "\\b(dict|list|set|frozenset|tuple|type)\\b(?=\\s*\\[)",
+      "name": "support.type.python"
+    }
+  ]
+}
