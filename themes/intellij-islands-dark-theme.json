@@ -854,6 +854,8 @@
       "foreground": "#c77dbb",
       "fontStyle": "italic"
     },
+    "recordComponent": "#c77dbb",
+    "*.constructor.declaration": "#56a8f5",
     "annotation": "#b3ae60",
     "annotationMember": "#bcbec4",
     "decorator": "#b3ae60",
